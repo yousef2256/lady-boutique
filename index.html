@@ -443,6 +443,14 @@
       margin: 0
     }
 
+    .headacts {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center
+    }
+
     .filters {
       display: flex;
       gap: 10px;
@@ -1014,7 +1022,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 60;
+      z-index: 70;
       padding: 16px
     }
 
@@ -1145,7 +1153,7 @@
       align-items: center;
       justify-content: center;
       padding: 18px;
-      z-index: 30
+      z-index: 60
     }
 
     .modalbox {
@@ -1684,6 +1692,27 @@
       padding: 0
     }
 
+    .topbtns {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: nowrap
+    }
+
+    .topbtns .icon-btn {
+      flex: 0 0 41px
+    }
+
+    #btnLang {
+      font-size: 13px;
+      letter-spacing: 0
+    }
+
+    .topbtns .icon-btn .ic {
+      width: 19px;
+      height: 19px
+    }
+
     button[data-icon],
     label[data-icon] {
       display: inline-flex;
@@ -1926,6 +1955,591 @@
       }
     }
 
+    /* ===== order cards (mobile list) ===== */
+    .ordercards {
+      display: none
+    }
+
+    @media(max-width:760px) {
+      #orders .table {
+        display: none
+      }
+
+      .ordercards {
+        display: grid;
+        gap: 13px;
+        margin-top: 14px
+      }
+    }
+
+    .ocard {
+      position: relative;
+      overflow: hidden;
+      text-align: start;
+      width: 100%;
+      background: var(--glass);
+      border: 1px solid var(--line2);
+      border-radius: 19px;
+      padding: 14px 14px 13px 17px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(var(--blur)) saturate(155%);
+      -webkit-backdrop-filter: blur(var(--blur)) saturate(155%);
+      cursor: pointer;
+      transition: transform .14s ease, box-shadow .16s ease;
+      font-family: inherit;
+      color: var(--txt)
+    }
+
+    .ocard:active {
+      transform: scale(.985)
+    }
+
+    .ocard .bar {
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: var(--p)
+    }
+
+    .ocard.new .bar {
+      background: var(--blue)
+    }
+
+    .ocard.confirm .bar {
+      background: var(--orange)
+    }
+
+    .ocard.pack .bar {
+      background: #a55bd6
+    }
+
+    .ocard.ship .bar {
+      background: #35a4e0
+    }
+
+    .ocard.done .bar {
+      background: var(--green)
+    }
+
+    .ocard.cancel .bar {
+      background: var(--red);
+      opacity: .5
+    }
+
+    .och {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px
+    }
+
+    .onum {
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: .2px
+    }
+
+    .odate {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 3px
+    }
+
+    .ocu {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 13px
+    }
+
+    .ocav {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--p), var(--pd));
+      box-shadow: 0 9px 20px -9px var(--p)
+    }
+
+    .ocard.cancel .ocav {
+      filter: grayscale(.7)
+    }
+
+    .oci {
+      min-width: 0;
+      flex: 1
+    }
+
+    .ocii {
+      min-width: 0
+    }
+
+    .oci b {
+      display: block;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+
+    .oci span {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    .ocarrow {
+      flex: 0 0 auto;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--glass3);
+      border: 1px solid var(--line2);
+      color: var(--muted)
+    }
+
+    .ocarrow .ic {
+      width: 16px;
+      height: 16px
+    }
+
+    [dir="rtl"] .ocarrow .ic {
+      transform: scaleX(-1)
+    }
+
+    .ocnums {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 7px;
+      background: var(--glass3);
+      border: 1px solid var(--line2);
+      border-radius: 14px;
+      padding: 10px 7px;
+      margin-bottom: 12px
+    }
+
+    .ocn {
+      text-align: center;
+      min-width: 0
+    }
+
+    .ocn span {
+      display: block;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-bottom: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+
+    .ocn b {
+      display: block;
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .ocacts {
+      display: flex;
+      gap: 8px
+    }
+
+    .ocacts button {
+      flex: 1 1 0;
+      min-width: 0;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border-radius: 12px;
+      background: var(--glass2);
+      border: 1px solid var(--line2);
+      color: var(--txt);
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .ocacts button .ic {
+      width: 17px;
+      height: 17px
+    }
+
+    .ocacts button:active {
+      transform: scale(.96)
+    }
+
+    /* ===== order details page ===== */
+    .odbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px
+    }
+
+    .odback {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 41px;
+      padding: 0 14px;
+      border-radius: 12px;
+      background: var(--glass2);
+      border: 1px solid var(--line2);
+      color: var(--txt);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .odback .ic {
+      width: 17px;
+      height: 17px;
+      transform: scaleX(-1)
+    }
+
+    [dir="rtl"] .odback .ic {
+      transform: none
+    }
+
+    .odbaracts {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .odbaracts button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 41px;
+      padding: 0 13px;
+      border-radius: 12px;
+      background: var(--glass2);
+      border: 1px solid var(--line2);
+      color: var(--txt);
+      font-family: inherit;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .odbaracts button .ic {
+      width: 17px;
+      height: 17px
+    }
+
+    .odbaracts button.primary {
+      background: linear-gradient(135deg, var(--p), var(--pd));
+      border: 0;
+      color: #fff;
+      box-shadow: 0 14px 30px -16px var(--p)
+    }
+
+    .odbaracts button.danger {
+      background: #ff4d6114;
+      border-color: #ff4d613d;
+      color: #e3485c
+    }
+
+    .odhero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(150deg, var(--glass), var(--glass3) 65%, var(--glass2));
+      border: 1px solid var(--line2);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(var(--blur)) saturate(160%);
+      -webkit-backdrop-filter: blur(var(--blur)) saturate(160%);
+      padding: 18px;
+      margin-bottom: 14px
+    }
+
+    .odhero::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--p), var(--pd))
+    }
+
+    .odhero h2 {
+      font-size: 21px;
+      margin: 9px 0 4px
+    }
+
+    .odmeta {
+      font-size: 11.5px;
+      color: var(--muted)
+    }
+
+    .odclient {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 11px
+    }
+
+    .odclient span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--glass3);
+      border: 1px solid var(--line2);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 11px;
+      max-width: 100%;
+      overflow-wrap: anywhere
+    }
+
+    .odclient span .ic {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+      opacity: .75
+    }
+
+    .odhnums {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px
+    }
+
+    .odn {
+      background: var(--glass3);
+      border: 1px solid var(--line2);
+      border-radius: 15px;
+      padding: 11px 6px;
+      text-align: center;
+      min-width: 0
+    }
+
+    .odn span {
+      display: block;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-bottom: 4px
+    }
+
+    .odn b {
+      display: block;
+      font-size: 14.5px;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .odn.main {
+      background: linear-gradient(135deg, var(--p), var(--pd));
+      border: 0;
+      color: #fff;
+      box-shadow: 0 16px 32px -16px var(--p)
+    }
+
+    .odn.main span {
+      color: #ffdcec
+    }
+
+    .odsec {
+      margin-bottom: 14px
+    }
+
+    .odsec .head {
+      margin-bottom: 11px
+    }
+
+    .odrows {
+      display: flex;
+      flex-direction: column
+    }
+
+    .odrow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 0;
+      font-size: 12.5px;
+      border-bottom: 1px dashed var(--line2)
+    }
+
+    .odrow:last-child {
+      border-bottom: 0
+    }
+
+    .odrow span {
+      color: var(--muted)
+    }
+
+    .odrow b {
+      text-align: end
+    }
+
+    .odrow.final {
+      border-top: 2px solid var(--line2);
+      border-bottom: 0;
+      margin-top: 6px;
+      padding-top: 13px;
+      font-size: 14px;
+      font-weight: 800
+    }
+
+    .odrow.final span {
+      color: var(--txt)
+    }
+
+    .oditems {
+      display: flex;
+      flex-direction: column;
+      gap: 11px
+    }
+
+    .oditem {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      background: var(--glass2);
+      border: 1px solid var(--line2);
+      border-radius: 16px;
+      padding: 11px
+    }
+
+    .odithumb {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--glass3);
+      border: 1px solid var(--line2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--pd)
+    }
+
+    .odithumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .odinfo {
+      flex: 1;
+      min-width: 0
+    }
+
+    .odinfo>b {
+      display: block;
+      font-size: 13.5px;
+      margin-bottom: 7px;
+      overflow-wrap: anywhere
+    }
+
+    .odichips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 8px
+    }
+
+    .odichips span {
+      font-size: 10px;
+      font-weight: 700;
+      background: var(--glass3);
+      border: 1px solid var(--line2);
+      border-radius: 999px;
+      padding: 4px 9px
+    }
+
+    .odiline {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px 12px;
+      flex-wrap: wrap;
+      font-size: 10.5px;
+      color: var(--muted)
+    }
+
+    .odiline b {
+      color: var(--txt)
+    }
+
+    .odisum {
+      text-align: end;
+      flex: 0 0 auto;
+      min-width: 74px
+    }
+
+    .odisum b {
+      display: block;
+      font-size: 13.5px
+    }
+
+    .odisum small {
+      display: block;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: 3px
+    }
+
+    .odfoot {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap
+    }
+
+    .odfoot .btn {
+      flex: 1 1 150px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px
+    }
+
+    .odfoot .btn .ic {
+      width: 17px;
+      height: 17px
+    }
+
+    @media(max-width:760px) {
+      .odhnums {
+        gap: 7px
+      }
+
+      .odn b {
+        font-size: 13px
+      }
+
+      .odhero {
+        padding: 15px
+      }
+    }
+
     /* ===== mobile: modal as scrollable bottom sheet ===== */
     @media(max-width:760px) {
       .modal {
@@ -2147,9 +2761,9 @@
             <p data-i18n="top_sub">مبيعات، تكاليف، عملات وأرباح LADY BOUTIQUE</p>
           </div>
         </div>
-        <div style="display:flex;gap:7px;align-items:flex-start;flex-wrap:wrap"><button id="btnTheme"
-            class="ghost icon-btn" onclick="toggleTheme()" title="الوضع"></button><button id="btnLang" class="ghost"
-            style="min-width:41px" onclick="toggleLang()">EN</button><button id="topAct" class="primary"></button></div>
+        <div class="topbtns"><button id="btnTheme" class="ghost icon-btn" onclick="toggleTheme()"
+            title="الوضع"></button><button id="btnLang" class="ghost icon-btn" onclick="toggleLang()">EN</button><button
+            id="topAct" class="primary icon-btn"></button></div>
       </div>
 
       <section id="dashboard">
@@ -2248,7 +2862,12 @@
               <tbody id="ordersBody"></tbody>
             </table>
           </div>
+          <div class="ordercards" id="ordersCards"></div>
         </div>
+      </section>
+
+      <section id="orderDetails" class="hidden">
+        <div class="odwrap" id="odWrap"></div>
       </section>
 
       <section id="new" class="hidden">
@@ -2454,12 +3073,13 @@
 
   <div class="modal hidden" id="invoiceModal">
     <div class="modalbox">
-      <div class="head print-hide">
-        <h2 data-i18n="invoice_preview">معاينة الفاتورة</h2>
-        <div><button class="primary" data-i18n="print_pdf" data-i18n-icon="print" onclick="window.print()">طباعة /
-            PDF</button><button class="ghost" data-i18n="close"
-            onclick="invoiceModal.classList.add('hidden')">إغلاق</button></div>
-      </div>
+        <div class="head print-hide">
+          <h2 data-i18n="invoice_preview">معاينة الفاتورة</h2>
+          <div class="headacts"><button class="ghost" data-i18n="inv_send_wa" data-i18n-icon="send"
+              onclick="sendInvoice()">إرسال واتساب</button><button class="primary" data-i18n="print_pdf"
+              data-i18n-icon="print" onclick="window.print()">طباعة / PDF</button><button class="ghost"
+              data-i18n="close" onclick="invoiceModal.classList.add('hidden')">إغلاق</button></div>
+        </div>
       <div id="invoice"></div>
     </div>
   </div>
@@ -2592,7 +3212,12 @@
       moon: 'M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-5.4-5.4c0-1.97 1.07-3.7 2.67-4.61A7.41 7.41 0 0 0 12 3Z',
       camera: 'M9 3 7.5 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.5L15 3H9Zm3 5a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z',
       bulb: 'M12 2a7 7 0 0 0-4 12.7c.59.53.9 1.36.9 2.3h6.2c0-.94.31-1.77.9-2.3A7 7 0 0 0 12 2ZM8.5 20h7v1.5h-7V20Zm7-2h-7v-1.5h7V18Z',
-      invoice: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 1.5L18.5 9H13V3.5ZM6 20V4h5v7h7v9H6Z'
+      invoice: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 1.5L18.5 9H13V3.5ZM6 20V4h5v7h7v9H6Z',
+      chevron: 'M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6Z',
+      person: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4Z',
+      phone: 'M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z',
+      pin: 'M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z',
+      calendar: 'M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 16H5V10h14v10ZM5 8V6h14v2H5Z'
     };
     const ICON_EMOJI = { home: "⌂", grid: "▣", "cart-plus": "＋", truck: "🚚", barcode: "◇", chart: "📈", cog: "⚙", plus: "＋", x: "×", edit: "✎", trash: "🗑", menu: "☰", print: "🖨", upload: "⬆", download: "⬇", refresh: "↻", send: "➤", copy: "⧉", check: "✓", alert: "!", sun: "☀️", moon: "🌙" };
     function IC(n) { const d = ICONS[n] || (ICON_EMOJI[n] ? '' + ICON_EMOJI[n] : n); return ICONS[n] ? `<svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="${d}"/></svg>` : d }
@@ -2603,6 +3228,7 @@
     const I18N = {
       nav_dashboard: { ar: "لوحة التحكم", en: "Dashboard" }, nav_orders: { ar: "الطلبات", en: "Orders" }, nav_new: { ar: "طلب جديد", en: "New Order" }, nav_supplier: { ar: "المورد", en: "Supplier" }, nav_products: { ar: "المنتجات والتسعير", en: "Products & Pricing" }, nav_profit: { ar: "الأرباح", en: "Profits" }, nav_settings: { ar: "الإعدادات", en: "Settings" },
       top_sub: { ar: "مبيعات، تكاليف، عملات وأرباح LADY BOUTIQUE", en: "Sales, costs, currencies & profits for LADY BOUTIQUE" }, top_new: { ar: "طلب جديد", en: "New Order" },
+      nav_orderDetails: { ar: "تفاصيل الطلب", en: "Order Details" }, inv_send_wa: { ar: "إرسال واتساب", en: "WhatsApp" }, od_back: { ar: "العودة للطلبات", en: "Back to Orders" }, od_summary: { ar: "ملخص الطلب", en: "Order Summary" }, od_client: { ar: "بيانات العميل", en: "Customer Details" }, od_items: { ar: "المنتجات المطلوبة", en: "Order Items" }, od_unit: { ar: "سعر الوحدة", en: "Unit price" }, od_line_total: { ar: "إجمالي السطر", en: "Line total" }, od_quick: { ar: "إجراءات سريعة", en: "Quick Actions" }, od_wa_ok: { ar: "تم فتح واتساب", en: "WhatsApp opened" }, od_wa_nophone: { ar: "رقم العميل غير متوفر — اختر جهة الاتصال", en: "No customer number — pick a contact" }, od_view: { ar: "التفاصيل", en: "Details" },
       backup: { ar: "نسخة احتياطية", en: "Backup" }, restore: { ar: "استعادة", en: "Restore" },
       theme_dark: { ar: "الوضع الداكن", en: "Dark mode" }, theme_light: { ar: "الوضع الفاتح", en: "Light mode" }, theme_on_dark: { ar: "تم تفعيل الوضع الداكن.", en: "Dark mode enabled." }, theme_on_light: { ar: "تم تفعيل الوضع الفاتح.", en: "Light mode enabled." }, lang_switched: { ar: "تم تغيير اللغة.", en: "Language switched." },
       dsales_l: { ar: "إجمالي المبيعات", en: "Total Sales" }, dcost_l: { ar: "تكلفة المنتجات", en: "Product Cost" }, dcost_s: { ar: "حسب سعر الشراء وقت الطلب", en: "At buy price at order time" }, dprofit_l: { ar: "صافي الربح", en: "Net Profit" }, dexp_l: { ar: "مصاريف إضافية", en: "Extra Expenses" }, dexp_s: { ar: "شحن + رسوم + جمارك + أخرى", en: "Shipping + fees + customs + other" }, dmargin_s: { ar: "هامش {{v}}%", en: "Margin {{v}}%" }, n_orders: { ar: "{{n}} طلب", en: "{{n}} orders" },
@@ -2689,22 +3315,39 @@
     function setBusy(btn, busy, label = t("busy")) { if (!btn) return; if (busy) { btn.dataset.oldText = btn.textContent; btn.disabled = true; btn.textContent = label } else { btn.disabled = false; btn.textContent = btn.dataset.oldText || btn.textContent } }
     function flashField(el) { if (!el) return; el.classList.remove("shake"); void el.offsetWidth; el.classList.add("shake"); el.focus() }
     const TOPACT = {
-      dashboard: { ic: "plus", k: "top_new", fn: () => page("new") },
-      orders: { ic: "plus", k: "top_new", fn: () => page("new") },
+      dashboard: { ic: "cart-plus", k: "top_new", fn: () => page("new") },
+      orders: { ic: "cart-plus", k: "top_new", fn: () => page("new") },
       new: { ic: "check", k: "save_order", fn: () => saveOrder() },
       products: { ic: "plus", k: "add_product", fn: () => newProduct() },
       supplier: { ic: "send", k: "sup_send", fn: () => sendSupplier() },
-      profit: { ic: "plus", k: "top_new", fn: () => page("new") },
-      settings: { ic: "check", k: "save_settings", fn: () => saveSettings() }
+      profit: { ic: "cart-plus", k: "top_new", fn: () => page("new") },
+      settings: { ic: "check", k: "save_settings", fn: () => saveSettings() },
+      orderDetails: { ic: "send", k: "inv_send_wa", fn: () => sendInvoice() }
     };
     function setTopAction(p) {
       const b = document.getElementById("topAct"); if (!b) return;
       const a = TOPACT[p] || TOPACT.dashboard;
-      b.innerHTML = IC(a.ic) + '<span>' + esc(t(a.k)) + '</span>';
+      b.innerHTML = IC(a.ic);
       b.onclick = a.fn;
-      b.setAttribute("aria-label", t(a.k));
+      const label = t(a.k);
+      b.title = label;
+      b.setAttribute("aria-label", label);
     }
-    function page(p) { document.querySelectorAll("main section").forEach(x => x.classList.add("hidden")); const sec = document.getElementById(p); if (sec) sec.classList.remove("hidden"); document.querySelectorAll(".nav button").forEach(x => x.classList.toggle("active", x.dataset.page === p)); document.querySelectorAll(".tabbar .tb").forEach(x => x.classList.toggle("active", x.dataset.page === p)); title.textContent = t("nav_" + p) || "LADY BOUTIQUE"; setTopAction(p); if (p === "dashboard") renderDashboard(); if (p === "orders") renderOrders(); if (p === "products") renderProducts(); if (p === "profit") renderProfit(); if (p === "supplier") renderSupplier() }
+    function page(p) {
+      document.querySelectorAll("main section").forEach(x => x.classList.add("hidden"));
+      const sec = document.getElementById(p); if (sec) sec.classList.remove("hidden");
+      const act = p === "orderDetails" ? "orders" : p;
+      document.querySelectorAll(".nav button").forEach(x => x.classList.toggle("active", x.dataset.page === act));
+      document.querySelectorAll(".tabbar .tb").forEach(x => x.classList.toggle("active", x.dataset.page === act));
+      title.textContent = t("nav_" + p) || "LADY BOUTIQUE";
+      setTopAction(p);
+      if (p === "dashboard") renderDashboard();
+      if (p === "orders") renderOrders();
+      if (p === "products") renderProducts();
+      if (p === "profit") renderProfit();
+      if (p === "supplier") renderSupplier();
+      if (p === "orderDetails") renderOrderDetails()
+    }
     document.querySelectorAll(".nav button").forEach(x => x.onclick = () => page(x.dataset.page));
     function renderTabs() { const tb = document.getElementById("tabbar"); if (!tb) return; const tabs = [["dashboard", "home"], ["orders", "grid"], ["supplier", "truck"], ["products", "barcode"], ["profit", "chart"], ["settings", "cog"]]; tb.innerHTML = tabs.map(([pg, ic]) => `<button class="tb ${pg === "supplier" ? "active" : ""}" data-page="${pg}" data-icon="${ic}"></button>`).join(""); tb.querySelectorAll(":scope > button").forEach(x => x.onclick = () => page(x.dataset.page)); tb.querySelectorAll("[data-icon]").forEach(el => { el.innerHTML = IC(el.dataset.icon) + `<span>${t("nav_" + el.dataset.page)}</span>` }) }
     function persist(opts = {}) { localStorage.setItem(KEY, JSON.stringify(orders)); localStorage.setItem(PKEY, JSON.stringify(products)); if (opts.render !== false) { renderDashboard(); renderOrders(); renderProducts(); renderProfit(); renderSupplier() } }
@@ -2720,9 +3363,105 @@
       let q = (search.value || "").trim().toLowerCase(), f = filter.value;
       let a = orders.filter(o => (!q || [o.id, o.customer, o.phone].some(v => String(v).toLowerCase().includes(q))) && (!f || o.status === f)).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       ordersBody.innerHTML = a.length ? a.map(o => `<tr><td data-label="${esc(t("bill"))}"><b>${esc(o.id)}</b></td><td data-label="${esc(t("col_customer"))}">${esc(o.customer)}</td><td data-label="${esc(t("col_sales"))}">${money(o.sales)}</td><td data-label="${esc(t("col_cost"))}">${money(o.cost)}</td><td data-label="${esc(t("col_expense"))}">${money(o.expenses)}</td><td data-label="${esc(t("col_profit"))}" class="${o.profit >= 0 ? 'profit' : 'loss'}">${money(o.profit)}</td><td data-label="${esc(t("col_margin"))}">${o.sales ? (o.profit / o.sales * 100).toFixed(1) : 0}%</td><td data-label="${esc(t("col_status"))}"><select class="input" style="height:38px;line-height:38px;padding:0 8px" onchange="changeStatus('${o.id}',this.value)">${["new", "confirmed", "packing", "shipping", "delivered", "cancelled"].map(x => `<option value="${x}" ${o.status === x ? "selected" : ""}>${st(x)}</option>`).join("")}</select></td><td><div class="actions"><button class="btn" onclick="viewInvoice('${o.id}')">${t("invoice_btn")}</button><button class="btn" onclick="editOrder('${o.id}')">${t("edit")}</button><button class="btn danger" onclick="delOrder('${o.id}')">${t("delete")}</button></div></td></tr>`).join("") : `<tr><td colspan="9"><div class="empty">${t("no_results")}</div></td></tr>`;
+      const cards = document.getElementById("ordersCards");
+      if (cards) cards.innerHTML = a.length ? a.map(orderCard).join("") : `<div class="empty">${t("no_results")}</div>`;
     }
-    function changeStatus(id, s) { const o = orders.find(x => x.id === id); if (!o) return; const old = o.status; o.status = s; persist(); toast(t("status_changed", { id: o.id, from: st(old), to: st(s) })) }
-    function delOrder(id) { const o = orders.find(x => x.id === id); if (!o) return; if (confirm(t("del_order_q", { id }))) { orders = orders.filter(x => x.id !== id); persist(); toast(t("del_order_ok", { id })) } }
+    function orderCard(o) {
+      const ini = esc((o.customer || "?").trim().charAt(0) || "?"), marg = o.sales ? (o.profit / o.sales * 100).toFixed(1) : 0;
+      return `<article class="ocard ${cls(o.status)}" role="button" tabindex="0" aria-label="${esc(o.id)}" onclick="openOrder('${o.id}')">
+        <span class="bar"></span>
+        <div class="och"><span class="ocii"><span class="onum">${esc(o.id)}</span><span class="odate">${dFmt(o.createdAt)}</span></span><span class="badge ${cls(o.status)}">${st(o.status)}</span></div>
+        <div class="ocu"><span class="ocav">${ini}</span><span class="oci"><b>${esc(o.customer)}</b><span>${esc(o.phone || "—")}</span></span><span class="ocarrow">${IC("chevron")}</span></div>
+        <div class="ocnums"><span class="ocn"><span>${t("col_sales")}</span><b>${money(o.sales)}</b></span><span class="ocn"><span>${t("col_profit")}</span><b class="${o.profit >= 0 ? 'profit' : 'loss'}">${money(o.profit)}</b></span><span class="ocn"><span>${t("col_margin")}</span><b>${marg}%</b></span></div>
+        <div class="ocacts" onclick="event.stopPropagation()"><button type="button" title="${t("invoice_btn")}" aria-label="${t("invoice_btn")}" onclick="viewInvoice('${o.id}')">${IC("invoice")}</button><button type="button" title="${t("inv_send_wa")}" aria-label="${t("inv_send_wa")}" onclick="sendCardWA('${o.id}')">${IC("send")}</button><button type="button" title="${t("edit")}" aria-label="${t("edit")}" onclick="editOrder('${o.id}')">${IC("edit")}</button><button type="button" title="${t("delete")}" aria-label="${t("delete")}" onclick="delOrder('${o.id}')">${IC("trash")}</button></div>
+      </article>`;
+    }
+    function sendCardWA(id) { currentOrder = id; sendInvoice() }
+    function openOrder(id) { currentOrder = id; page("orderDetails") }
+    function renderOrderDetails() {
+      const wrap = document.getElementById("odWrap"); if (!wrap) return;
+      const o = orders.find(x => x.id === currentOrder);
+      if (!o) { wrap.innerHTML = `<div class="empty">${t("no_results")}</div>`; return }
+      const marg = o.sales ? (o.profit / o.sales * 100).toFixed(1) : 0, items = o.items || [];
+      wrap.innerHTML = `
+      <div class="odbar">
+        <button class="odback" type="button" onclick="page('orders')">${IC("chevron")}<span>${t("od_back")}</span></button>
+        <div class="odbaracts">
+          <button type="button" onclick="viewInvoice('${o.id}')">${IC("invoice")}<span>${t("invoice_btn")}</span></button>
+          <button type="button" class="primary" onclick="sendInvoice()">${IC("send")}<span>${t("inv_send_wa")}</span></button>
+          <button type="button" onclick="editOrder('${o.id}')">${IC("edit")}<span>${t("edit")}</span></button>
+        </div>
+      </div>
+      <div class="odhero">
+        <span class="badge ${cls(o.status)}">${st(o.status)}</span>
+        <h2>${esc(o.customer)}</h2>
+        <div class="odmeta">${esc(o.id)} · ${dFmt(o.createdAt)}</div>
+        <div class="odclient">
+          <span>${IC("person")}${esc(o.customer)}</span>
+          <span>${IC("phone")}${esc(o.phone || "—")}</span>
+          ${o.address ? `<span>${IC("pin")}${esc(o.address)}</span>` : ""}
+          <span>${IC("invoice")}${esc(payMsg(o.payment))}</span>
+        </div>
+        <div class="odhnums">
+          <div class="odn main"><span>${t("col_sales")}</span><b>${money(o.sales)}</b></div>
+          <div class="odn"><span>${t("col_profit")}</span><b class="${o.profit >= 0 ? 'profit' : 'loss'}">${money(o.profit)}</b></div>
+          <div class="odn"><span>${t("col_margin")}</span><b>${marg}%</b></div>
+        </div>
+      </div>
+      <div class="card odsec">
+        <div class="head">
+          <h2>${t("od_summary")}</h2>
+          <select class="input" style="height:38px;line-height:38px;padding:0 8px;max-width:160px" onchange="changeStatus('${o.id}',this.value)">${["new", "confirmed", "packing", "shipping", "delivered", "cancelled"].map(x => `<option value="${x}" ${o.status === x ? "selected" : ""}>${st(x)}</option>`).join("")}</select>
+        </div>
+        <div class="odrows">
+          <div class="odrow"><span>${t("inv_products")}</span><b>${money(o.sales - (o.shipping || 0) + (o.discount || 0))}</b></div>
+          <div class="odrow"><span>${t("inv_ship")}</span><b>${money(o.shipping)}</b></div>
+          <div class="odrow"><span>${t("inv_disc")}</span><b>-${money(o.discount)}</b></div>
+          <div class="odrow"><span>${t("inv_total")}</span><b>${money(o.sales)}</b></div>
+          <div class="odrow"><span>${t("col_cost")}</span><b class="loss">-${money(o.cost)}</b></div>
+          <div class="odrow"><span>${t("col_expense")}</span><b class="loss">-${money(o.expenses || 0)}</b></div>
+          <div class="odrow final"><span>${t("col_profit")}</span><b class="${o.profit >= 0 ? 'profit' : 'loss'}">${money(o.profit)}</b></div>
+        </div>
+      </div>
+      <div class="card odsec">
+        <div class="head"><h2>${t("od_items")}</h2><span class="muted">${t("n_items", { n: items.length })}</span></div>
+        <div class="oditems">${items.map((x, i) => `
+          <div class="oditem">
+            <span class="odithumb">${(x.imgs && x.imgs[0]) ? `<img src="${x.imgs[0]}" alt="">` : esc((x.name || "؟").charAt(0))}</span>
+            <div class="odinfo">
+              <b>${i + 1}. ${esc(x.name)}</b>
+              <div class="odichips">${x.color ? `<span>${esc(x.color)}</span>` : ""}<span>${t("pqty_lbl", { n: x.qty })}</span>${x.currency ? `<span>${esc(x.currency)}</span>` : ""}</div>
+              <div class="odiline"><span>${t("od_unit")} <b>${x.fx > 0 ? money(x.buy * x.fx) : money(x.buy)}</b></span><span>${t("th_sell")} <b>${money(x.sell)}</b></span></div>
+            </div>
+            <div class="odisum"><b>${money(x.sales)}</b><small>${money(x.cost)}</small></div>
+          </div>`).join("")}
+        </div>
+      </div>
+      ${o.notes ? `<div class="card odsec"><div class="head"><h2>${t("inv_notes")}</h2></div><div class="muted" style="font-size:12.5px;white-space:pre-wrap">${esc(o.notes)}</div></div>` : ""}
+      <div class="odfoot">
+        <button class="btn" type="button" onclick="viewInvoice('${o.id}')">${IC("print")}<span>${t("print_pdf")}</span></button>
+        <button class="btn" type="button" onclick="sendInvoice()">${IC("send")}<span>${t("inv_send_wa")}</span></button>
+        <button class="btn danger" type="button" onclick="delOrder('${o.id}')">${IC("trash")}<span>${t("delete")}</span></button>
+        <button class="btn" type="button" onclick="page('orders')">${IC("chevron")}<span>${t("od_back")}</span></button>
+      </div>`;
+    }
+    function changeStatus(id, s) {
+      const o = orders.find(x => x.id === id); if (!o) return; const old = o.status; o.status = s; persist();
+      const det = document.getElementById("orderDetails");
+      if (det && !det.classList.contains("hidden")) renderOrderDetails();
+      toast(t("status_changed", { id: o.id, from: st(old), to: st(s) }))
+    }
+    function delOrder(id) {
+      const o = orders.find(x => x.id === id); if (!o) return false;
+      if (!confirm(t("del_order_q", { id }))) return false;
+      orders = orders.filter(x => x.id !== id);
+      const det = document.getElementById("orderDetails");
+      const viewing = !!(det && !det.classList.contains("hidden") && currentOrder === id);
+      if (viewing) currentOrder = null;
+      persist(); toast(t("del_order_ok", { id }));
+      if (viewing) page("orders");
+      return true
+    }
     function currencies(sel) { return Object.keys(CURS).map(c => `<option value="${c}" ${c === sel ? "selected" : ""}>${c} — ${NAMES[c][LANG()]}</option>`).join("") }
     function markDuplicateItems() { const rows = [...document.querySelectorAll("#items .item")]; const names = rows.map(r => r.querySelector(".iname").value.trim().toLowerCase()).filter(Boolean); const counts = names.reduce((m, n) => (m[n] = (m[n] || 0) + 1, m), {}); rows.forEach(r => { const n = r.querySelector(".iname").value.trim().toLowerCase(); r.classList.toggle("duplicate", !!n && counts[n] > 1) }); return Object.keys(counts).filter(n => counts[n] > 1) }
     const IMG_MAX = 900, IMG_Q = .72, IMG_LIMIT = 8;
@@ -2907,7 +3646,49 @@
       persist(); setBusy(btn, false); resetForm(true); page("orders"); toast(wasEditing ? t("order_saved_edit", { id }) : t("order_saved_new", { id }))
     }
     function editOrder(id) { let o = orders.find(x => x.id === id); if (!o) { toast(t("order_notfound"), "err"); return } editing = id; page("new"); formTitle.textContent = t("editing_title", { id }); customer.value = o.customer; phone.value = o.phone; address.value = o.address || ""; payment.value = payCode(o.payment || "cod"); status.value = o.status || "new"; customerShip.value = o.shipping || 0; extraCost.value = o.extraCost || 0; fees.value = o.fees || 0; discount.value = o.discount || 0; notes.value = o.notes || ""; items.innerHTML = ""; (o.items || []).forEach(x => addItem(x, { silent: true })); updateItemsCount(); calc(); toast(t("order_loaded", { id })) }
-    function viewInvoice(id) { let o = orders.find(x => x.id === id); if (!o) return; invoice.innerHTML = `<div class="invoice"><div class="invhead"><div class="invbrand"><img src="${LOGO}"><div><h2>${esc(settings.name)}</h2><small>${t("sell_invoice")}</small></div></div><div class="invmeta"><b>${t("inv_no")}:</b> ${esc(o.id)}<br><b>${t("inv_date")}:</b> ${dFmt(o.createdAt)}<br><b>${t("inv_status")}:</b> ${st(o.status)}</div></div><div class="invclient"><b>${t("inv_customer")}:</b> ${esc(o.customer)} — ${esc(o.phone)}<br>${esc(o.address || t("no_address"))}</div><table><thead><tr><th>#</th><th>${t("th_product")}</th><th>${t("th_qty")}</th><th>${t("th_sell")}</th><th>${t("th_total")}</th></tr></thead><tbody>${o.items.map((x, i) => `<tr><td>${i + 1}</td><td><div style="display:flex;align-items:center;gap:7px">${(x.imgs || [])[0] ? `<img class="minithumb" src="${x.imgs[0]}" alt="">` : ""}<div><b>${esc(x.name)}</b>${x.color ? `<div style="color:#666;font-size:9px">${t("color_line", { c: esc(x.color) })}${(x.imgs || []).length > 1 ? ` ${t("img_line", { n: x.imgs.length })}` : ""}</div>` : (x.imgs || []).length > 1 ? `<div style="color:#666;font-size:9px">${t("img_alone", { n: x.imgs.length })}</div>` : ""}</div></div></td><td>${x.qty}</td><td>${money(x.sell)}</td><td>${money(x.sales)}</td></tr>`).join("")}</tbody></table><div class="invtotal"><div class="line"><span>${t("inv_products")}</span><b>${money(o.sales - o.shipping + o.discount)}</b></div><div class="line"><span>${t("inv_ship")}</span><b>${money(o.shipping)}</b></div><div class="line"><span>${t("inv_disc")}</span><b>-${money(o.discount)}</b></div><div class="line final"><span>${t("inv_total")}</span><b>${money(o.sales)}</b></div></div><div style="font-size:10px;margin-top:15px"><b>${t("inv_pay")}:</b> ${esc(payMsg(o.payment))}${o.notes ? `<br><b>${t("inv_notes")}:</b> ${esc(o.notes)}` : ""}</div><div class="foot">${esc(settings.footer)}${settings.phone ? " — " + esc(settings.phone) : ""}${settings.address ? " — " + esc(settings.address) : ""}</div></div>`; invoiceModal.classList.remove("hidden") }
+    let currentOrder = null;
+    function waPhone(ph) {
+      let d = String(ph || "").replace(/\D/g, "");
+      if (!d) return "";
+      if (d.startsWith("00")) d = d.slice(2);
+      if (/^0\d{6,}$/.test(d)) d = "20" + d.slice(1);
+      return d;
+    }
+    function invoiceText(o) {
+      const L = [];
+      L.push(`${settings.name} — ${t("sell_invoice")} (${t("inv_no")}: ${o.id})`);
+      L.push(`${t("inv_date")}: ${dFmt(o.createdAt)} · ${t("inv_status")}: ${st(o.status)}`);
+      L.push(`----------------`);
+      L.push(`${t("inv_customer")}: ${o.customer}${o.phone ? " · " + o.phone : ""}`);
+      if (o.address) L.push(`${t("label_address")}: ${o.address}`);
+      L.push(`----------------`);
+      o.items.forEach((x, i) => {
+        L.push(`${i + 1}. ${x.name}${x.color ? " (" + x.color + ")" : ""} × ${x.qty} — ${t("inv_total")}: ${money(x.sales)}`);
+      });
+      L.push(`----------------`);
+      L.push(`${t("inv_products")}: ${money(o.sales - o.shipping + o.discount)}`);
+      L.push(`${t("inv_ship")}: ${money(o.shipping)}`);
+      L.push(`${t("inv_disc")}: -${money(o.discount)}`);
+      L.push(`${t("inv_total")}: ${money(o.sales)}`);
+      L.push(`${t("inv_pay")}: ${payMsg(o.payment)}`);
+      if (o.notes) L.push(`${t("inv_notes")}: ${o.notes}`);
+      L.push(`----------------`);
+      let foot = settings.name + (settings.phone ? " · " + settings.phone : "") + (settings.address ? " · " + settings.address : "");
+      L.push(foot);
+      if (settings.footer) L.push(settings.footer);
+      return L.join("\n");
+    }
+    function sendInvoice() {
+      const o = orders.find(x => x.id === currentOrder);
+      if (!o) { toast(t("no_results"), "err"); return }
+      const txt = invoiceText(o);
+      const p = waPhone(o.phone);
+      const url = "https://wa.me/" + (p ? p + "?text=" : "?text=") + encodeURIComponent(txt);
+      const w = window.open(url, "_blank");
+      if (!w) { window.location.href = url; }
+      toast(t(o.phone ? "od_wa_ok" : "od_wa_nophone"), o.phone ? "ok" : "warn");
+    }
+    function viewInvoice(id) { currentOrder = id; let o = orders.find(x => x.id === id); if (!o) return; invoice.innerHTML = `<div class="invoice"><div class="invhead"><div class="invbrand"><img src="${LOGO}"><div><h2>${esc(settings.name)}</h2><small>${t("sell_invoice")}</small></div></div><div class="invmeta"><b>${t("inv_no")}:</b> ${esc(o.id)}<br><b>${t("inv_date")}:</b> ${dFmt(o.createdAt)}<br><b>${t("inv_status")}:</b> ${st(o.status)}</div></div><div class="invclient"><b>${t("inv_customer")}:</b> ${esc(o.customer)} — ${esc(o.phone)}<br>${esc(o.address || t("no_address"))}</div><table><thead><tr><th>#</th><th>${t("th_product")}</th><th>${t("th_qty")}</th><th>${t("th_sell")}</th><th>${t("th_total")}</th></tr></thead><tbody>${o.items.map((x, i) => `<tr><td>${i + 1}</td><td><div style="display:flex;align-items:center;gap:7px">${(x.imgs || [])[0] ? `<img class="minithumb" src="${x.imgs[0]}" alt="">` : ""}<div><b>${esc(x.name)}</b>${x.color ? `<div style="color:#666;font-size:9px">${t("color_line", { c: esc(x.color) })}${(x.imgs || []).length > 1 ? ` ${t("img_line", { n: x.imgs.length })}` : ""}</div>` : (x.imgs || []).length > 1 ? `<div style="color:#666;font-size:9px">${t("img_alone", { n: x.imgs.length })}</div>` : ""}</div></div></td><td>${x.qty}</td><td>${money(x.sell)}</td><td>${money(x.sales)}</td></tr>`).join("")}</tbody></table><div class="invtotal"><div class="line"><span>${t("inv_products")}</span><b>${money(o.sales - o.shipping + o.discount)}</b></div><div class="line"><span>${t("inv_ship")}</span><b>${money(o.shipping)}</b></div><div class="line"><span>${t("inv_disc")}</span><b>-${money(o.discount)}</b></div><div class="line final"><span>${t("inv_total")}</span><b>${money(o.sales)}</b></div></div><div style="font-size:10px;margin-top:15px"><b>${t("inv_pay")}:</b> ${esc(payMsg(o.payment))}${o.notes ? `<br><b>${t("inv_notes")}:</b> ${esc(o.notes)}` : ""}</div><div class="foot">${esc(settings.footer)}${settings.phone ? " — " + esc(settings.phone) : ""}${settings.address ? " — " + esc(settings.address) : ""}</div></div>`; invoiceModal.classList.remove("hidden") }
     function renderProducts() { productsBody.innerHTML = products.length ? products.map(p => { let r = num(p.fx), cost = num(p.buy) * r, profit = num(p.sell) - cost, im = (p.imgs || []); return `<tr><td data-label="${esc(t("th_product"))}"><div style="display:flex;align-items:center;gap:8px">${im[0] ? `<img class="minithumb" src="${im[0]}" alt="">` : `<span class="minithumb" style="display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:var(--pd)">${esc((p.name || "؟").charAt(0))}</span>`}<div><b>${esc(p.name)}</b>${p.color ? `<div class="chip" style="margin-top:4px"><i style="background:${esc(p.color)}"></i><u>${esc(p.color)}</u></div>` : ""}${im.length > 1 ? `<div class="muted" style="font-size:9px">${t("img_alone", { n: im.length })}</div>` : ""}</div></div></td><td data-label="${esc(t("th_currency"))}">${p.currency}</td><td data-label="${esc(t("th_buy"))}">${p.buy}</td><td data-label="${esc(t("th_fx"))}">${r}</td><td data-label="${esc(t("th_cost_egp"))}">${money(cost)}</td><td data-label="${esc(t("th_sell"))}">${money(p.sell)}</td><td data-label="${esc(t("th_profit"))}" class="${profit >= 0 ? 'profit' : 'loss'}">${money(profit)}</td><td><div class="actions"><button class="btn" onclick="addToOrder('${p.id}')">${IC("cart-plus")} ${t("to_order")}</button><button class="btn" onclick="newProduct('${p.id}')">${t("edit")}</button><button class="btn danger" onclick="delProduct('${p.id}')">${t("delete")}</button></div></td></tr>` }).join("") : `<tr><td colspan="8"><div class="empty">${t("no_products")}</div></td></tr>` }
     function addToOrder(id) { const p = products.find(x => x.id === id); if (!p) return; if (editing) { toast(t("in_edit"), "warn"); return } page("new"); addItem({ name: p.name, color: p.color || "", imgs: (p.imgs || []).slice(), currency: p.currency, buy: p.buy, fx: p.fx, sell: p.sell }, { silent: true }); markDuplicateItems(); calc(); toast(t("added_to_new", { name: p.name })) }
     function newProduct(id) {
